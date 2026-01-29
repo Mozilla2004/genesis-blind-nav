@@ -83,15 +83,19 @@ Coherence ∝ modes^0.5     # Emergent quantum synchronization
 projects/dual-core-fusion/
 ├── code/
 │   └── genesis_bridge.py              # 双核聚变协议核心脚本（可扩展）
+├── tools/
+│   └── generate_voltage_map.py        # Phase → Voltage 转换工具 🆕
 ├── results/
 │   ├── genesis_56_blind_lock.json     # 56模优化结果（11KB）
 │   ├── optimization_bridge_56.png    # 56模可视化（121KB）
 │   ├── genesis_128_blind_lock.json    # 128模优化结果（16KB）🆕
 │   ├── optimization_bridge_128.png   # 128模可视化（103KB）🆕
+│   ├── genesis_128_voltage_map.csv   # 128模电压映射（硬件就绪）🆕
 │   ├── phase_params_opt.json         # 6模演示结果（865B）
 │   └── locking_trace.png             # 6模演示可视化（114KB）
 ├── docs/
 │   ├── README.md                      # 本文件
+│   ├── HARDWARE_INTEGRATION_CN.md     # 硬件对接指南（工程版）🆕
 │   └── FILE_MANAGEMENT.md             # 文件管理记录
 ```
 
@@ -195,6 +199,18 @@ python3 code/genesis_bridge.py --modes 256
 5. **locking_trace.png**（114KB）
    - 6 模锁定过程可视化
    - 能量收敛 + SECURE 指标
+
+### **硬件对接文档** 🆕
+6. **[📚 硬件对接指南 (工程版)](docs/HARDWARE_INTEGRATION_CN.md)** （推荐）
+   - **目标用户**：硬件工程师、系统集成工程师
+   - **核心内容**：
+     - `genesis_128_voltage_map.csv` 文件结构详解
+     - 电压换算公式：`DAC = (V / 8.0) × 65535`
+     - 安全参数：V_pi=5.2V, V_max=8.0V（安全钳位）
+     - 操作步骤：下载 → 加载 DAC → 验证通道映射
+     - 预期现象：500ms 内涌现高相干性（Coherence > 0.45）
+   - **支持格式**：LabVIEW、Python、C++ 控制系统集成
+   - **即插即用**：无需解析 JSON，直接使用 CSV 预计算 DAC 数值
 
 ---
 
