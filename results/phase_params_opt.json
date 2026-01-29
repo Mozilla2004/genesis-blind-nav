@@ -1,0 +1,33 @@
+{
+  "experiment_id": "QGPO_v0.9_PhotonicQ_6mode",
+  "timestamp": "2026-01-28",
+  "system_config": {
+    "num_modes": 6,
+    "target_pattern": "111100",
+    "coupling_topology": "ring"
+  },
+  "optimal_phases": {
+    "phase_1": 1.256,
+    "phase_2": 0.785,
+    "phase_3": 2.356,
+    "phase_4": 1.571,
+    "phase_5": 0.393,
+    "phase_6": 2.749
+  },
+  "performance_metrics": {
+    "target_probability": 0.992,
+    "convergence_time": 0.4,
+    "snr_improvement": 28.5,
+    "interference_visibility": 0.95,
+    "secure_metrics": {
+      "S": 0.01573804375338256,
+      "E": 1.0,
+      "C": 62.55263471293188,
+      "U": 0.8937348574864282,
+      "R": 0.9856560772352876,
+      "E2": 0.9971688280067048
+    }
+  },
+  "notes": "These phase parameters should be tested at 20\u00b0C \u00b1 1\u00b0C",
+  "validation_status": "Pending validation on photonic quantum hardware"
+}
