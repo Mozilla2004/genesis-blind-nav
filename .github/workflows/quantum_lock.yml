@@ -1,0 +1,37 @@
+name: Quantum Lock Protocol
+
+on:
+  push:
+    branches: [ "main", "master", "**" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  lock-verification:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        pip install -e .
+
+    - name: Execute Genesis Bridge
+      run: |
+        python genesis_bridge.py
+
+    - name: Upload Optimization Artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: fusion-results
+        path: |
+          optimization_bridge.png
+          genesis_56_blind_lock.json
