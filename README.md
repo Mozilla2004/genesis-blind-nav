@@ -1,41 +1,40 @@
 # Genesis-OS
 
-### High-Dimensional Quantum Phase Locking Framework
+### 高维量子相位锁定框架
 
-[![Version](https://img.shields.io/badge/version-2.0-orange.svg)](https://github.com/Mozilla2004/genesis-blind-nav)
-[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
-[![Supply Chain](https://img.shields.io/badge/supply%20chain-secure-green.svg)](docs/HARDWARE_INTEGRATION_CN.md)
+[![Version](https://img.shields.io/badge/版本-2.0-orange.svg)](https://github.com/Mozilla2004/genesis-blind-nav)
+[![License](https://img.shields.io/badge/许可-Apache%202.0-blue.svg)](LICENSE)
 
-**Industrial Control System for Photonic Quantum Devices**
+**光量子器件工业控制系统**
 
 ---
 
-## Core Impact (256-Mode Breakthrough)
+## 核心成果（256 模突破）
 
-| Metric | 56-Mode | 128-Mode | **256-Mode** | Total Improvement |
+| 指标 | 56 模 | 128 模 | **256 模** | 总提升 |
 |--------|---------|----------|--------------|-------------------|
-| **Energy** | -3.46 | -4.65 | **-4.68** | **+35.4%** |
+| **能量** | -3.46 | -4.65 | **-4.68** | **+35.4%** |
 | **SECURE** | 0.42 | 0.47 | **0.49** | +16.3% |
-| **Coherence (C)** | 0.054 | 0.459 | **0.702** | **+1,202%** |
+| **相干性 (C)** | 0.054 | 0.459 | **0.702** | **+1,202%** |
 
-**Technical Observation**: Coherence scaling law validated → 56→128→256 modes show non-linear emergence (0.05 → 0.46 → 0.70)
+**技术观察**：相干性缩放定律验证 → 56→128→256 模呈现非线性涌现（0.05 → 0.46 → 0.70）
 
 ---
 
-## Quick Start
+## 快速开始
 
 ```bash
-# Initialize 256-Mode Genesis Bridge
+# 初始化 256 模 Genesis Bridge
 python3 code/genesis_bridge.py --modes 256
 ```
 
-**Output**:
+**输出**：
 - `results/genesis_256_blind_lock.json` (25KB)
-- `results/genesis_256_voltage_map.csv` (11KB, DAC-ready)
+- `results/genesis_256_voltage_map.csv` (11KB, DAC 就绪)
 
-**Hardware Deployment**:
+**硬件部署**：
 ```bash
-# Generate voltage map for DAC control
+# 生成 DAC 控制电压映射
 python3 tools/generate_voltage_map.py \
   --input results/genesis_256_blind_lock.json \
   --output results/genesis_256_voltage_map.csv
@@ -43,15 +42,14 @@ python3 tools/generate_voltage_map.py \
 
 ---
 
-## Resources
+## 资源入口
 
-- 📄 **[Hardware Integration Guide](docs/HARDWARE_INTEGRATION_CN.md)** (Recommended)
-- 📂 **[Voltage Maps (CSV)](results/)** – DAC-ready format for LabVIEW/Python/C++
-- 🔒 **[Supply Chain Security](docs/README_v1_full_local_backup.md)** – Model-agnostic architecture
-- 📊 **[Performance Validation](#)** – 56/128/256-mode benchmark
+- 📄 **[硬件对接指南](docs/HARDWARE_INTEGRATION_CN.md)**（推荐）
+- 📂 **[电压映射表 (CSV)](results/)** – DAC 就绪格式，支持 LabVIEW/Python/C++
+- 📊 **[性能验证](#)** – 56/128/256 模基准测试
 
 ---
 
-**Repository**: https://github.com/Mozilla2004/genesis-blind-nav
+**仓库地址**：https://github.com/Mozilla2004/genesis-blind-nav
 
-**License**: Apache 2.0
+**开源协议**：Apache 2.0
