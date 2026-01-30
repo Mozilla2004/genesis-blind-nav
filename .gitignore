@@ -1,6 +1,8 @@
 # Local backup files (DO NOT PUSH TO GITHUB)
 README_v1_full_local_backup.md
 *_v1_full_local_backup.md
+FILE_MANAGEMENT.md
+docs/FILE_MANAGEMENT.md
 
 # Python
 __pycache__/

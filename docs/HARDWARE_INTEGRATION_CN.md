@@ -269,14 +269,6 @@ std::vector<VoltageChannel> load_voltage_map(const std::string& filepath) {
 
 ## 🔬 技术背景
 
-### Genesis-OS 优化结果
-
-本电压映射源于 Genesis-OS 的 **128模相位优化**，通过以下三阶段协议生成：
-
-1. **Phase 1**: Jules（Google AI）拓扑导航 - Fiedler 向量初始化
-2. **Phase 2**: CC（ClaudeCode）物理验证 - SECURE 指标分析
-3. **Phase 3**: QGPO 几何优化 - 梯度下降精细锁定
-
 ### 突破性发现：反常缩放律
 
 传统量子系统认为：规模增大 → 相干性下降
