@@ -319,7 +319,3 @@ std::vector<VoltageChannel> load_voltage_map(const std::string& filepath) {
 ## ⚖️ 许可证
 
 本文档遵循 Genesis-OS 项目协议：Apache 2.0 License
-
----
-
-**"从数学到电力，Genesis-OS 已就绪。接入硬件，观测涌现。"** ⚡🚀
