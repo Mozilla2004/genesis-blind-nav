@@ -1,0 +1,18 @@
+# Local backup files (DO NOT PUSH TO GITHUB)
+README_v1_full_local_backup.md
+*_v1_full_local_backup.md
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# IDE
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
