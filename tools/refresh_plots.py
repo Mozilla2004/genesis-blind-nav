@@ -61,12 +61,12 @@ def load_evolution_data(json_path):
     return n_photons, evolution_data
 
 
-def plot_convergence(n_photons, evolution_data, output_path):
+def plot_convergence(n_photons_display, evolution_data, output_path):
     """
     绘制标准化收敛曲线
 
     Args:
-        n_photons: 光子数
+        n_photons_display: 显示的光子数（从文件名提取，而非数据内容）
         evolution_data: 优化历史数据
         output_path: 输出 PNG 路径
     """
@@ -107,8 +107,8 @@ def plot_convergence(n_photons, evolution_data, output_path):
                alpha=0.8,
                label=f'Gradient Optimized: {energy_final:.2f}')
 
-    # 设置标题和标签
-    ax.set_title(f'Genesis-OS: {n_photons}-Photon Active Phase Locking Convergence',
+    # 设置标题和标签（使用显示的光子数）
+    ax.set_title(f'Genesis-OS: {n_photons_display}-Photon Active Phase Locking Convergence',
                  fontsize=14,
                  fontweight='bold',
                  pad=20)
@@ -174,15 +174,11 @@ def main():
             continue
 
         try:
-            # 加载数据
-            n_photons_data, evolution_data = load_evolution_data(json_file)
+            # 加载数据（忽略 JSON 内部的光子数，使用文件名中的光子数）
+            _, evolution_data = load_evolution_data(json_file)
 
-            # 验证光子数
-            if n_photons_data != n_photons:
-                print(f"  ⚠️  警告：JSON 中的光子数 ({n_photons_data}) 与预期 ({n_photons}) 不符")
-
-            # 绘制图表
-            output_path = plot_convergence(n_photons_data, evolution_data, png_file)
+            # 使用文件名中的光子数作为标题
+            output_path = plot_convergence(n_photons, evolution_data, png_file)
 
             # 获取文件大小
             file_size = output_path.stat().st_size / 1024  # KB
