@@ -47,25 +47,7 @@
 
 ---
 
-### **4. simple_tutorial_results.png** ⚠️ Legacy
 
-- **尺寸**: 1500 x 900 px (48 KB)
-- **格式**: PNG RGBA
-- **首次提交**: d958b92 (2026-01-29)
-- **来源**: Genesis-Kernel simple tutorial
-- **状态**: 包含中文字符，待英文化
-- **用途**: 6-mode demonstration visualization
-
----
-
-### **5. locking_trace.png** ⚠️ Legacy
-
-- **尺寸**: 1781 x 1480 px (114 KB)
-- **格式**: PNG RGBA
-- **首次提交**: d958b92 (2026-01-29)
-- **来源**: Phase locking demonstration
-- **状态**: 包含中文字符，待英文化
-- **用途**: Locking process trace visualization
 
 ---
 
@@ -99,8 +81,7 @@ python3 tools/refresh_plots.py
 - [x] optimization_bridge_56.png - ✅ 已标准化（英文）
 - [x] optimization_bridge_128.png - ✅ 已标准化（英文）
 - [x] optimization_bridge_256.png - ✅ 已标准化（英文）
-- [ ] simple_tutorial_results.png - ⚠️ 待英文化
-- [ ] locking_trace.png - ⚠️ 待英文化
+
 
 ---
 
